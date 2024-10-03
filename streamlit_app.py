@@ -568,7 +568,7 @@ analysis_results = run_main(option_dataframe,max_df,max_df_2,request_index)[2]
 
 # Display the data as a table using `st.dataframe`.
 st.dataframe(
-    dis_option_datafram,
+    dis_option_dataframe,
     use_container_width=True,hide_index=True
 )
 
