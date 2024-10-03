@@ -438,4 +438,6 @@ def run_main(option_dataframe,max_df,max_df_2,max_df_3,tmp_max_call,tmp_max_put,
         # ,display_df[(display_df.STRICK_PRICE.isin(range_price))]
                 # )
         # display(request_index.tail(3))
-        time.sleep(2)
+        # time.sleep(2)
+return dis_option_dataframe.tail(5),max_df.tail(3),analysis_results[(analysis_results.STP.isin(range_price)),request_index.tail(3)
+
