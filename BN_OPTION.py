@@ -244,7 +244,112 @@ def max_dict(option_df):
               }
     return max_dic
 
-import pandas as pd
+def max_dict_vlues(option_df):
+    max_dic = {
+                'max_CS'   : [
+                    max_values('CALL_SA',option_df,0)[0],
+                    max_values('CALL_SA',option_df,1)[0],
+                    max_values('CALL_SA',option_df,2)[0]
+                ],
+                'max_CB'   : [
+                    max_values('CALL_BQ',option_df,0)[0],
+                    max_values('CALL_BQ',option_df,1)[0],
+                    max_values('CALL_BQ',option_df,2)[0]
+                ],
+                # 'max_CBIDQ'   : [
+                #     max_values('C_BID_Q',option_df,0)[0],
+                #     max_values('C_BID_Q',option_df,1)[0],
+                #     max_values('C_BID_Q',option_df,2)[0]
+                # ],
+                # 'max_CBIDp'   : [
+                #     max_values('C_BID_P',option_df,0)[0],
+                #     max_values('C_BID_P',option_df,1)[0],
+                #     max_values('C_BID_P',option_df,2)[0]
+                # ],
+                #  'max_CASKQ'   : [
+                #     max_values('C_ASK_Q',option_df,0)[0],
+                #     max_values('C_ASK_Q',option_df,1)[0],
+                #     max_values('C_ASK_Q',option_df,2)[0]
+                # ],
+                # 'max_CASKP'   : [
+                #     max_values('C_ASK_P',option_df,0)[0],
+                #     max_values('C_ASK_P',option_df,1)[0],
+                #     max_values('C_ASK_P',option_df,2)[0]
+                # ],
+                'max_CT'   : [
+                    max_values('CALL_TTV',option_df,0)[0],
+                    max_values('CALL_TTV',option_df,1)[0],
+                    max_values('CALL_TTV',option_df,2)[0]
+                ],
+                 'max_CTOI'   : [
+                    max_values('total_call_OI',option_df,0)[0],
+                    max_values('total_call_OI',option_df,1)[0],
+                    max_values('total_call_OI',option_df,2)[0]
+                ],
+                'max_COI'  : [
+                    max_values('CALL_OI',option_df,0)[0],
+                    max_values('CALL_OI',option_df,1)[0],
+                    max_values('CALL_OI',option_df,2)[0]
+                ],
+                'max_CCOI' : [
+                    max_values('CALL_CHNG_OI',option_df,0)[0],
+                    max_values('CALL_CHNG_OI',option_df,1)[0],
+                    max_values('CALL_CHNG_OI',option_df,2)[0]
+                ],
+                'STP'      : [int(option_df['current_stp'][0]),int(option_df['current_stp'][0]),int(option_df['current_stp'][0])],
+
+                'max_PCOI' : [
+                    max_values('PUT_CHNG_OI',option_df,0)[0],
+                    max_values('PUT_CHNG_OI',option_df,1)[0],
+                    max_values('PUT_CHNG_OI',option_df,2)[0]
+                ],
+                'max_POI'  : [
+                    max_values('PUT_OI',option_df,0)[0],
+                    max_values('PUT_OI',option_df,1)[0],
+                    max_values('PUT_OI',option_df,2)[0]
+                ],
+                'max_PTOI'   : [
+                    max_values('total_put_OI',option_df,0)[0],
+                    max_values('total_put_OI',option_df,1)[0],
+                    max_values('total_put_OI',option_df,2)[0]
+                ],
+                'max_PT'   : [
+                    max_values('PUT_TTV',option_df,0)[0],
+                    max_values('PUT_TTV',option_df,1)[0],
+                    max_values('PUT_TTV',option_df,2)[0]
+                ],
+                # 'max_PBIDQ'   : [
+                #     max_values('P_BID_Q',option_df,0)[0],
+                #     max_values('P_BID_Q',option_df,1)[0],
+                #     max_values('P_BID_Q',option_df,2)[0]
+                # ],
+                # # 'max_PBIDp'   : [
+                #     max_values('P_BID_P',option_df,0)[0],
+                #     max_values('P_BID_P',option_df,1)[0],
+                #     max_values('P_BID_P',option_df,2)[0]
+                # ],
+                #  'max_PASKQ'   : [
+                #     max_values('P_ASK_Q',option_df,0)[0],
+                #     max_values('P_ASK_Q',option_df,1)[0],
+                #     max_values('P_ASK_Q',option_df,2)[0]
+                # ],
+                # 'max_PASKP'   : [
+                #     max_values('C_ASK_P',option_df,0)[0],
+                #     max_values('C_ASK_P',option_df,1)[0],
+                #     max_values('C_ASK_P',option_df,2)[0]
+                # ],
+                'max_PB'   : [
+                    max_values('PUT_BQ',option_df,0)[0],
+                    max_values('PUT_BQ',option_df,1)[0],
+                    max_values('PUT_BQ',option_df,2)[0]
+                ],
+                'max_PS'   : [
+                    max_values('PUT_SA',option_df,0)[0],
+                    max_values('PUT_SA',option_df,1)[0],
+                    max_values('PUT_SA',option_df,2)[0]
+                ]
+              }
+    return max_dic
 
 def analyze_trading_signals(df):
     results = []
@@ -411,7 +516,7 @@ def analyze_options_with_buyers_sellers(df):
     
     return pd.DataFrame(results)
 
-def run_main(option_dataframe,max_df,max_df_2,max_df_3,tmp_max_call,tmp_max_put,request_index):
+def run_main(option_dataframe,max_df,max_df_2,request_index):
     while True:
         clear_output(wait=True)
         option_dataframe,option_df,request_index=option_dataframe._append(main()[0],ignore_index=True),main()[1],request_index._append(main()[2],ignore_index=True)
@@ -439,5 +544,4 @@ def run_main(option_dataframe,max_df,max_df_2,max_df_3,tmp_max_call,tmp_max_put,
                 # )
         # display(request_index.tail(3))
         # time.sleep(2)
-return dis_option_dataframe.tail(5),max_df.tail(3),analysis_results[(analysis_results.STP.isin(range_price)),request_index.tail(3)
-
+    return dis_option_dataframe.tail(5),max_df.tail(3),analysis_results[(analysis_results.STP.isin(range_price))],request_index.tail(3)
