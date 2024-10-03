@@ -36,26 +36,9 @@ def load_data():
 
 df = load_data()
 
-# Show a multiselect widget with the genres using `st.multiselect`.
-# genres = st.multiselect(
-#     "Genres",
-#     df.genre.unique(),
-#     ["Action", "Adventure", "Biography", "Comedy", "Drama", "Horror"],
-# )
-
-# Show a slider widget with the years using `st.slider`.
-# years = st.slider("Years", 1986, 2006, (2000, 2016))
-
-# Filter the dataframe based on the widget input and reshape it.
-# df_filtered = df[(df["genre"].isin(genres)) & (df["year"].between(years[0], years[1]))]
-# df_reshaped = df_filtered.pivot_table(
-#     index="year", columns="genre", values="gross", aggfunc="sum", fill_value=0
-# )
-df_reshaped = df
-
 # Display the data as a table using `st.dataframe`.
 st.dataframe(
-    df_reshaped,
+    df,
     use_container_width=True,
     # column_config={"year": st.column_config.TextColumn("Year")},
 )
