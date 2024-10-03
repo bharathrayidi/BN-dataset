@@ -35,6 +35,7 @@ def load_data():
 
 
 df = load_data()
+display(df)
 
 # Display the data as a table using `st.dataframe`.
 st.dataframe(
