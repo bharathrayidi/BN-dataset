@@ -562,7 +562,6 @@ st.write(
 
 # Load the data from a CSV. We're caching this so it doesn't reload every time the app
 # reruns (e.g. if the user interacts with the widgets).
-@st.cache_data
 dis_option_dataframe = run_main(option_dataframe,max_df,max_df_2,request_index)[0]
 max_df = run_main(option_dataframe,max_df,max_df_2,request_index)[1]
 analysis_results = run_main(option_dataframe,max_df,max_df_2,request_index)[2]
