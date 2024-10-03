@@ -54,11 +54,11 @@ df = load_data()
 df_reshaped = df
 
 # Display the data as a table using `st.dataframe`.
-# st.dataframe(
-#     df_reshaped,
-#     use_container_width=True,
-#     column_config={"year": st.column_config.TextColumn("Year")},
-# )
+st.dataframe(
+    df_reshaped,
+    use_container_width=True,
+    # column_config={"year": st.column_config.TextColumn("Year")},
+)
 
 # # Display the data as an Altair chart using `st.altair_chart`.
 # df_chart = pd.melt(
