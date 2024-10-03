@@ -11,8 +11,13 @@ A simple Streamlit app showing movie data from [The Movie Database (TMDB)](https
    ```
    $ pip install -r requirements.txt
    ```
+2. Install the requirements
 
-2. Run the app
+   ```   
+   $ pip install --upgrade 'sqlalchemy<2.0'
+   ```
+
+3. Run the app
 
    ```
    $ streamlit run streamlit_app.py
