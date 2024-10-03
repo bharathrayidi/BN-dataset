@@ -16,7 +16,7 @@ max_df_2 = pd.DataFrame(columns=['max_CS','max_CB','max_CBIDQ','max_CASKQ','max_
 
 
 # Show the page title and description.
-st.set_page_config(page_title="Movies dataset", page_icon="🎬")
+st.set_page_config(page_title="BANKNIFT dataset", page_icon="🎬")
 st.title(" banknifty  dataset")
 st.write(
     """
@@ -40,7 +40,7 @@ display(df)
 # Display the data as a table using `st.dataframe`.
 st.dataframe(
     df,
-    use_container_width=True,
+    use_container_width=True,hide_index=True
     # column_config={"year": st.column_config.TextColumn("Year")},
 )
 
