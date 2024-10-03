@@ -1,1 +1,7 @@
 streamlit
+altair
+pandas
+IPython
+pandasql
+requests
+bs4
